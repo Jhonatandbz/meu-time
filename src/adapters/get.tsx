@@ -22,8 +22,6 @@ export const makeGetRequest = async (props: Props) => {
     }
     const data = await response.json();
 
-    console.log(data)
-
     return data
     
   } catch (error) {
