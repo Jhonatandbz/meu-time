@@ -2,7 +2,7 @@ import React, {useEffect, useState} from "react";
 import {makeGetRequest} from "../adapters/get"
 import {LeagueResponse, LeagueItem, LeaguesProps} from "../interfaces/league"
 
-import database from "../json/leages.json"
+import database from "../json/leagues.json"
 
 const LeagueList: React.FC<LeaguesProps> = ({country, onSelect}) => {
 
@@ -51,15 +51,17 @@ const LeagueList: React.FC<LeaguesProps> = ({country, onSelect}) => {
         <>
         <label htmlFor="leaguesList">Ligas</label>
         <select key="leaguesList" onChange={leagueSelected}>
-            {data.response.map((item) => (
-                <option key={item.league.id} value={item.league.id}>
-                    {item.league.name}
+            <option value=''></option>
+            {database.response.map(({league}) => (
+                <option key={league.id} value={league.id}>
+                    {league.name}
                 </option>
             ))}
         </select>
 
         <label htmlFor="seasonList">Temporada</label>
         <select key="seasonList" onChange={seasonSelected}>
+            <option value=''></option>
             {league?.seasons.map((item, index) => (
                 <option key={index} value={item.year}>
                     {item.year}

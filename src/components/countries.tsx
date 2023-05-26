@@ -2,13 +2,14 @@ import React, {useEffect, useState} from "react";
 import {makeGetRequest} from "../adapters/get"
 import {Country, CountriesProps} from "../interfaces/country"
 
-// import database from "../countries.json"
+import database from "../json/country.json"
 
 const CountryList: React.FC<CountriesProps> = ({onSelect}) => {
 
     const [data, setData] = useState<Country[]>([]);
     
     useEffect(()=>{
+
         
         const fetchData = async () =>{
             try{
@@ -18,8 +19,6 @@ const CountryList: React.FC<CountriesProps> = ({onSelect}) => {
                 console.error(error);
             }
         }
-
-        
 
         fetchData();
 
@@ -37,7 +36,8 @@ const CountryList: React.FC<CountriesProps> = ({onSelect}) => {
         <>
         <label htmlFor="countriesList">Países</label>
         <select key="countriesList" onChange={countrySelected}>
-            {data.map((option, index) => (
+            <option value=''></option>
+            {database.response.map((option, index) => (
                 <option key={index} value={option.name}>
                     {option.name}
                 </option>

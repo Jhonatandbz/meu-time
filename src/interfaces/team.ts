@@ -36,4 +36,5 @@ export interface TeamItem {
 
 export interface TeamProps{
     league: string
+    onSelect: (team: string) => void;
 }
