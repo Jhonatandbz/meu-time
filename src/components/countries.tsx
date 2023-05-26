@@ -4,36 +4,32 @@ import {Country, CountriesProps} from "../interfaces/country"
 
 // import database from "../countries.json"
 
-const OptionsList: React.FC<CountriesProps> = ({onSelect}) => {
+const CountryList: React.FC<CountriesProps> = ({onSelect}) => {
 
     const [data, setData] = useState<Country[]>([]);
-    // const [country, setCountry] = useState('');
     
     useEffect(()=>{
         
         const fetchData = async () =>{
             try{
-                const response = await makeGetRequest({endpoint: 'countries', query: '', select: ''});
+                const response = await makeGetRequest({endpoint: 'countries'});
                 setData(response.response);
             }catch(error){
                 console.error(error);
             }
         }
 
+        
+
         fetchData();
 
     },[])
-
-    // useEffect(()=>{
-    //     console.log(country)
-    // }, [country] )
 
     if (!data) {
         return <div>Carregando...</div>;
     }
 
     const countrySelected = (event: React.ChangeEvent<HTMLSelectElement>) => {
-        // setCountry(event.target.value)
         onSelect(event.target.value)
     }
 
@@ -51,4 +47,4 @@ const OptionsList: React.FC<CountriesProps> = ({onSelect}) => {
   );
 };
 
-export default OptionsList;
+export default CountryList;

@@ -52,4 +52,5 @@ export interface Coverage {
 
 export interface LeaguesProps {
   country: string;
+  onSelect: (league: string) => void;
 }
