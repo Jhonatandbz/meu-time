@@ -26,14 +26,11 @@ const LeagueList: React.FC<LeaguesProps> = ({country, onSelect}) => {
 
     },[country])
 
-    if (!data) {
-      return <div>Carregando...</div>;
-    }
 
     const leagueSelected = (event: React.ChangeEvent<HTMLSelectElement>) => {
 
         const selectedLeagueId = parseInt(event.target.value, 10);
-        const selectedLeague = data.response.find((item) => item.league.id === selectedLeagueId);   
+        const selectedLeague = data?.response.find((item) => item.league.id === selectedLeagueId);   
         if(selectedLeague){
             setLeague(selectedLeague)
         }
@@ -50,9 +47,9 @@ const LeagueList: React.FC<LeaguesProps> = ({country, onSelect}) => {
     return (
         <>
         <label htmlFor="leaguesList">Ligas</label>
-        <select key="leaguesList" onChange={leagueSelected}>
+        <select key="leaguesList" onChange={leagueSelected} className=" list leaguesList">
             <option value=''></option>
-            {database.response.map(({league}) => (
+            {data?.response.map(({league}) => (
                 <option key={league.id} value={league.id}>
                     {league.name}
                 </option>
@@ -60,7 +57,7 @@ const LeagueList: React.FC<LeaguesProps> = ({country, onSelect}) => {
         </select>
 
         <label htmlFor="seasonList">Temporada</label>
-        <select key="seasonList" onChange={seasonSelected}>
+        <select key="seasonList" onChange={seasonSelected} className="list seasonList">
             <option value=''></option>
             {league?.seasons.map((item, index) => (
                 <option key={index} value={item.year}>

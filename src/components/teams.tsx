@@ -27,10 +27,6 @@ const TeamList: React.FC<TeamProps> = ({league, onSelect}) => {
 
     }, [league])
 
-    if (!data) {
-        return <div>Carregando...</div>;
-    }
-
     const teamSelected = (event: React.ChangeEvent<HTMLSelectElement>) => {
         onSelect(event.target.value)
     }
@@ -39,9 +35,9 @@ const TeamList: React.FC<TeamProps> = ({league, onSelect}) => {
     return(
         <>
         <label htmlFor="teamsList">Times</label>
-        <select key="teamsList" onChange={teamSelected}>
+        <select key="teamsList" onChange={teamSelected} className="list teamsList">
             <option value=''></option>
-            {database.response.map(({team}) => (
+            {database?.response.map(({team}) => (
                 <option key={team.id} value={team.id}>
                     {team.name}
                 </option>

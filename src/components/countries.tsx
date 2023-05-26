@@ -24,9 +24,6 @@ const CountryList: React.FC<CountriesProps> = ({onSelect}) => {
 
     },[])
 
-    if (!data) {
-        return <div>Carregando...</div>;
-    }
 
     const countrySelected = (event: React.ChangeEvent<HTMLSelectElement>) => {
         onSelect(event.target.value)
@@ -35,7 +32,7 @@ const CountryList: React.FC<CountriesProps> = ({onSelect}) => {
     return (
         <>
         <label htmlFor="countriesList">Países</label>
-        <select key="countriesList" onChange={countrySelected}>
+        <select key="countriesList" onChange={countrySelected} className="list countriesList">
             <option value=''></option>
             {database.response.map((option, index) => (
                 <option key={index} value={option.name}>

@@ -37,7 +37,7 @@ const PlayerList: React.FC<PlayersProps> = ({league, team}) => {
         <>
         <ul>
             {database?.response.map(({player}) => (
-                <li key={player.id}>
+                <li key={player.id} className="playersList">
                    <h4>Name: {player.firstname}</h4>
                    <p>Age: {player.age} - Country: {player.nationality}</p>
                 </li>
