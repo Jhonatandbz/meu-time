@@ -1,72 +1,19 @@
 import React, {useEffect, useState} from "react";
 import {makeGetRequest} from "../adapters/get"
-import leagues from "../leages.json"
+import {LeagueResponse, LeaguesProps} from "../interfaces/league"
 
-interface LeagueResponse {
-  get: string;
-  parameters: any[];
-  errors: any[];
-  results: number;
-  paging: {
-    current: number;
-    total: number;
-  };
-  response: LeagueItem[];
-}
+// import database from "../leages.json"
 
-interface LeagueItem {
-  league: {
-    id: number;
-    name: string;
-    type: string;
-    logo: string;
-  };
-  country: {
-    name: string;
-    code: string | null;
-    flag: string | null;
-  };
-  seasons: SeasonItem[];
-}
-
-interface SeasonItem {
-  year: number;
-  start: string;
-  end: string;
-  current: boolean;
-  coverage: Coverage;
-}
-
-interface Coverage {
-  fixtures: {
-    events: boolean;
-    lineups: boolean;
-    statistics_fixtures: boolean;
-    statistics_players: boolean;
-  };
-  standings: boolean;
-  players: boolean;
-  top_scorers: boolean;
-  top_assists: boolean;
-  top_cards: boolean;
-  injuries: boolean;
-  predictions: boolean;
-  odds: boolean;
-}
-
-const OptionsList = () => {
+const OptionsList: React.FC<LeaguesProps> = ({country}) => {
 
     const [data, setData] = useState<LeagueResponse | null>(null);
+    const [league, setLeague] = useState('');
 
-    const leagueResponse: LeagueResponse = leagues as LeagueResponse;
-    console.log(leagueResponse.response)
-
-    
     useEffect(()=>{
         
         const fetchData = async () =>{
             try{
-                const response = await makeGetRequest({endpoint: 'leagues', query: 'country', select: 'Brazil'});
+                const response = await makeGetRequest({endpoint: 'leagues', query: 'country', select: country});
                 setData(response);
             }catch(error){
                 console.error(error);
@@ -75,18 +22,24 @@ const OptionsList = () => {
 
         fetchData();
 
-    },[])
+    },[country])
+
+    useEffect(()=>{
+      console.log(league)
+    }, [league] )
 
     if (!data) {
       return <div>Carregando...</div>;
     }
 
+    const leagueSelected = (event: React.ChangeEvent<HTMLSelectElement>) => {
+      setLeague(event.target.value)
+    }
+
     return (
         <>
-
-        
         <label htmlFor="leaguesList">Ligas</label>
-        <select key="leaguesList">
+        <select key="leaguesList" onChange={leagueSelected}>
             {data.response.map((item) => (
                 <option key={item.league.id} value={item.league.name}>
                     {item.league.name}
