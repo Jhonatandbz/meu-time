@@ -24,8 +24,9 @@ const MeuTime: React.FC = () =>{
     }
 
     return(
-        <>
+        <div className="containerMain">
             <header className="selectionMenu">
+
                 <div className="selection countrie">
                     <Countries onSelect={countrySelectedEvent}/>
                 </div>
@@ -41,9 +42,11 @@ const MeuTime: React.FC = () =>{
             </header>
 
             <div className="selection players">
-                <Players league={selectedLeague} team={selectedTeam}/>
+                    <h3>Jogadores</h3>
+                    <Players league={selectedLeague} team={selectedTeam}/>
             </div>
-        </>
+            
+        </div>
     )
 
 }

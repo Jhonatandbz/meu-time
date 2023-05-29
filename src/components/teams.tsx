@@ -1,5 +1,6 @@
 import React, {useEffect, useState} from "react";
 import {makeGetRequest} from "../adapters/get"
+import "../styles/teams.css"
 import { TeamProps, TeamResponse } from "../interfaces/team";
 
 import database from "../json/teams.json"
@@ -34,10 +35,9 @@ const TeamList: React.FC<TeamProps> = ({league, onSelect}) => {
 
     return(
         <>
-        <label htmlFor="teamsList">Times</label>
         <select key="teamsList" onChange={teamSelected} className="list teamsList">
-            <option value=''></option>
-            {database?.response.map(({team}) => (
+            <option value='' disabled selected>Times</option>
+            {data?.response.map(({team}) => (
                 <option key={team.id} value={team.id}>
                     {team.name}
                 </option>

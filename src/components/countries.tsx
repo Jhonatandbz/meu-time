@@ -1,5 +1,6 @@
 import React, {useEffect, useState} from "react";
 import {makeGetRequest} from "../adapters/get"
+import "../styles/countries.css"
 import {Country, CountriesProps} from "../interfaces/country"
 
 import database from "../json/country.json"
@@ -31,10 +32,9 @@ const CountryList: React.FC<CountriesProps> = ({onSelect}) => {
 
     return (
         <>
-        <label htmlFor="countriesList">Países</label>
         <select key="countriesList" onChange={countrySelected} className="list countriesList">
-            <option value=''></option>
-            {database.response.map((option, index) => (
+            <option value='' disabled selected>Paises</option>
+            {data.map((option, index) => (
                 <option key={index} value={option.name}>
                     {option.name}
                 </option>

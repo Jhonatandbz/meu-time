@@ -1,5 +1,6 @@
 import React, {useEffect, useState} from "react";
 import {makeGetRequest} from "../adapters/get"
+import "../styles/leagues.css"
 import {LeagueResponse, LeagueItem, LeaguesProps} from "../interfaces/league"
 
 import database from "../json/leagues.json"
@@ -8,6 +9,7 @@ const LeagueList: React.FC<LeaguesProps> = ({country, onSelect}) => {
 
     const [data, setData] = useState<LeagueResponse | null>(null);
     const [league, setLeague] = useState<LeagueItem | null>(null);
+    
     useEffect(()=>{
         
         const fetchData = async () =>{
@@ -46,25 +48,26 @@ const LeagueList: React.FC<LeaguesProps> = ({country, onSelect}) => {
 
     return (
         <>
-        <label htmlFor="leaguesList">Ligas</label>
-        <select key="leaguesList" onChange={leagueSelected} className=" list leaguesList">
-            <option value=''></option>
-            {data?.response.map(({league}) => (
-                <option key={league.id} value={league.id}>
-                    {league.name}
-                </option>
-            ))}
-        </select>
+        <div className="leagueTemp">
+            <select key="leaguesList" onChange={leagueSelected} className=" list leaguesList">
+                <option value='' disabled selected>Ligas</option>
+                {data?.response.map(({league}) => (
+                    <option key={league.id} value={league.id}>
+                        {league.name}
+                    </option>
+                ))}
+            </select>
 
-        <label htmlFor="seasonList">Temporada</label>
-        <select key="seasonList" onChange={seasonSelected} className="list seasonList">
-            <option value=''></option>
-            {league?.seasons.map((item, index) => (
-                <option key={index} value={item.year}>
-                    {item.year}
-                </option>
-            ))}
-        </select>
+            
+            <select key="seasonList" onChange={seasonSelected} className="list seasonList">
+                <option value='' disabled selected>Temporada</option>
+                {league?.seasons.map((item, index) => (
+                    <option key={index} value={item.year}>
+                        {item.year}
+                    </option>
+                ))}
+            </select>
+        </div>
         </>
   );
 };
