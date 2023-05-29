@@ -1,46 +1,27 @@
-# Getting Started with Create React App
+Desafio: Desenvolver a aplicação "Meu Time" que utiliza a API-Football para obter informações sobre ligas e copas de futebol. Os usuários acessam a aplicação com uma chave de autenticação da API-Football.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Executando o projeto React TypeScript
+Este tutorial irá guiá-lo através dos passos necessários para executar o projeto React TypeScript localmente em seu ambiente de desenvolvimento.
 
-## Available Scripts
+Pré-requisitos
+Antes de começar, certifique-se de ter as seguintes ferramentas instaladas em seu sistema:
+- Node.js
 
-In the project directory, you can run:
+Passo 1: Clonar o repositório
+Clone o repositório do projeto para o seu ambiente local. Abra o terminal e execute o seguinte comando: git clone https://github.com/seu-usuario/meu-projeto.git
 
-### `npm start`
+Passo 2: Instalar as dependências
+Navegue até o diretório do projeto usando o comando cd: cd meu-projeto
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+Em seguida, instale as dependências do projeto executando o seguinte comando: npm install
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+Passo 3: Iniciar o servidor de desenvolvimento
+Para iniciar o servidor de desenvolvimento, utilize o seguinte comando: npm start
 
-### `npm test`
+Isso irá iniciar o servidor de desenvolvimento e o projeto React TypeScript será compilado e estará disponível em http://localhost:3000.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Passo 4: Acessar a aplicação
+Abra o navegador e acesse http://localhost:3000 para visualizar a aplicação em execução.
 
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+Passo 5: Explorar o projeto
+Agora você pode explorar e interagir com a aplicação React TypeScript em seu ambiente local. Sinta-se à vontade para modificar o código e ver as alterações refletidas automaticamente no navegador.
