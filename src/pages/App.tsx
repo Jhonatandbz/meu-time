@@ -4,6 +4,7 @@ import Countries from "../components/countries"
 import Leagues from "../components/leagues"
 import Teams from "../components/teams"
 import Players from "../components/players"
+import TeamStatics from "../components/statics"
 
 const MeuTime: React.FC = () =>{
 
@@ -19,8 +20,8 @@ const MeuTime: React.FC = () =>{
         setSelectedLeague(league)
     }
 
-    const teamSelectedEvent = (league: string) => {
-        setSelectedTeam(league)
+    const teamSelectedEvent = (team: string) => {
+        setSelectedTeam(team)
     }
 
     return(
@@ -41,10 +42,17 @@ const MeuTime: React.FC = () =>{
 
             </header>
 
-            <div className="selection players">
-                    <h3>Jogadores</h3>
-                    <Players league={selectedLeague} team={selectedTeam}/>
+            <div className="infoTeams">
+
+                <TeamStatics league={selectedLeague} team={selectedTeam}/>
+
+                <div className="selection players">
+                        <h3>Jogadores</h3>
+                        <Players league={selectedLeague} team={selectedTeam}/>
+                </div>
             </div>
+
+
             
         </div>
     )

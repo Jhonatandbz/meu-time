@@ -20,6 +20,7 @@ export const makeGetRequest = async (props: Props) => {
     if (!response.ok) {
       throw new Error('Erro na requisição');
     }
+
     const data = await response.json();
 
     // const jsonData = JSON.stringify(data);

@@ -21,10 +21,6 @@ header{
     
 }
 
-.selection.players{
-    align-self: flex-end;
-}
-
 select{
     -webkit-appearance: none;
     -moz-appearance: none;
@@ -40,6 +36,15 @@ select{
     border-radius: 50px 0px;
 }
 
+.infoTeams{
+    display: flex;
+    height: fit-content;
+}
+
+.selection.players{
+    justify-items: flex-end;
+    margin-left: auto;
+}
 
 .selection.players > * {
     margin-top: 0;
