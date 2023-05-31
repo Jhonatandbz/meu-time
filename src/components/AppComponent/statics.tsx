@@ -1,9 +1,9 @@
 import React, {useEffect, useState} from "react";
-import {makeGetRequest} from "../adapters/get"
+import {makeGetRequest} from "../../adapters/get"
 import "../styles/statics.css"
-import { StaticProps, TeamStatisticsResponse } from "../interfaces/static";
+import { StaticProps, TeamStatisticsResponse } from "../../interfaces/static";
 
-import database from "../json/statistics.json"
+import database from "../../json/statistics.json"
 
 const TeamStatics: React.FC<StaticProps> = ({league, team}) =>{
 

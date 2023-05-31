@@ -1,9 +1,9 @@
 import React, {useEffect, useState} from "react";
-import {makeGetRequest} from "../adapters/get"
+import {makeGetRequest} from "../../adapters/get"
 import "../styles/countries.css"
-import {Country, CountriesProps} from "../interfaces/country"
+import {Country, CountriesProps} from "../../interfaces/country"
 
-import database from "../json/country.json"
+import database from "../../json/country.json"
 
 const CountryList: React.FC<CountriesProps> = ({onSelect}) => {
 

@@ -1,6 +1,6 @@
 import React, {useState} from "react";
 import "../styles/app.css"
-import Countries from "../components/countries"
+import Countries from "../components/AppComponent/countries"
 import Leagues from "../components/leagues"
 import Teams from "../components/teams"
 import Players from "../components/players"
