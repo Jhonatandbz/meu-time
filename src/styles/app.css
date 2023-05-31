@@ -1,15 +1,14 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@500&display=swap');
 
-header{
-    display: flex;
-    justify-content: flex-end;
-    min-height: 3em;
-}
-
 .selectionMenu{
     display: flex;
     align-items: center;
     gap: 1em;
+}
+
+.selectionMenu h2{
+    margin-right: auto;
+    padding: 0 20px;
 }
 
 .containerMain{
@@ -39,6 +38,7 @@ select{
 .infoTeams{
     display: flex;
     height: fit-content;
+    margin-left: 1em ;
 }
 
 .selection.players{

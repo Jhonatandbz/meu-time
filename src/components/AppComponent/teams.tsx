@@ -1,7 +1,7 @@
 import React, {useEffect, useState} from "react";
 import {makeGetRequest} from "../../adapters/get"
-import "../styles/teams.css"
-import { TeamProps, TeamResponse } from "../../interfaces/team";
+import "../../styles/teams.css"
+import { TeamProps, TeamResponse } from "../../interfaces/AppInterfaces/team";
 
 import database from "../../json/teams.json"
 

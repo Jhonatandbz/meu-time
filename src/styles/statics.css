@@ -1,6 +1,30 @@
-
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@500&display=swap');
 
 .staticsContainer .results{
     display: flex;
     justify-content: center;
+}
+
+.staticsContainer table, th, td{
+    border-bottom : 1px #999 solid;
+    height: 1.5em;
+}
+
+.staticsTable{
+    border-collapse: collapse;
+    font-family: 'Roboto Slab', serif;
+    letter-spacing: 1px;
+}
+
+.staticsTable tr:nth-child(even) {
+    background-color: #ccc;
+  }
+
+.staticsTable td:first-child {
+    width: 100px; 
+}
+
+.staticsTable td:not(:first-child){
+    width: 70px;
+    text-align: center;
 }

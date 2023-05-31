@@ -1,5 +1,5 @@
-import {API_KEY, API_URL} from "../apiConfig"
-import {Props} from "../interfaces/get"
+import {API_KEY, API_URL} from "./apiConfig"
+import {Props} from "../interfaces/AppInterfaces/get"
 
 export const makeGetRequest = async (props: Props) => {
 

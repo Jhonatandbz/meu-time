@@ -1,7 +1,7 @@
 import React, {useEffect, useState} from "react";
 import {makeGetRequest} from "../../adapters/get"
-import "../styles/statics.css"
-import { StaticProps, TeamStatisticsResponse } from "../../interfaces/static";
+import "../../styles/statics.css"
+import { StaticProps, TeamStatisticsResponse, StatsTableProps } from "../../interfaces/AppInterfaces/static";
 
 import database from "../../json/statistics.json"
 
@@ -27,6 +27,7 @@ const TeamStatics: React.FC<StaticProps> = ({league, team}) =>{
 
     }, [team])
 
+    const {played, wins, draws, loses} = database.response.fixtures
     // if(!data?.response.lineups){
     //     return <h1></h1>
     // }
@@ -39,17 +40,42 @@ const TeamStatics: React.FC<StaticProps> = ({league, team}) =>{
                 <h2>{database?.response.lineups[0].formation}</h2> 
             </span>
 
-            <span className="results">
-                <h2>Resultados: </h2>
-                <label htmlFor="fixtures played">Jogos</label>
-                <p className="played">{database?.response.fixtures.played.total}</p> 
-                <label htmlFor="fixtures wins">Vitórias</label>
-                <p className="wins">{database?.response.fixtures.wins.total}</p>
-                <label htmlFor="fixtures loses">Derrotas</label>
-                <p className="loses">{database?.response.fixtures.loses.total}</p>
-                <label htmlFor="fixtures draws">Empates</label>
-                <p className="draws">{database?.response.fixtures.draws.total}</p>
-            </span>
+            <table className="staticsTable">
+                <thead>
+                    <tr>
+                        <th></th>
+                        <th>Casa</th>
+                        <th>Fora</th>
+                        <th>Total</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Jogos</td>
+                        <td>{played.home}</td>
+                        <td>{played.away}</td>
+                        <td>{played.total}</td>
+                    </tr>
+                    <tr>
+                        <td>Vitórias</td>
+                        <td>{wins.home}</td>
+                        <td>{wins.away}</td>
+                        <td>{wins.total}</td>
+                    </tr>
+                    <tr>
+                        <td>Empates</td>
+                        <td>{draws.home}</td>
+                        <td>{draws.away}</td>
+                        <td>{draws.total}</td>
+                    </tr>
+                    <tr>
+                        <td>Derrotas</td>
+                        <td>{loses.home}</td>
+                        <td>{loses.away}</td>
+                        <td>{loses.total}</td>
+                    </tr>
+                </tbody>
+            </table>
         </div>
         </>
     )

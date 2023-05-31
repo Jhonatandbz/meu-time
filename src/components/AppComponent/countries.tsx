@@ -1,7 +1,7 @@
 import React, {useEffect, useState} from "react";
 import {makeGetRequest} from "../../adapters/get"
-import "../styles/countries.css"
-import {Country, CountriesProps} from "../../interfaces/country"
+import "../../styles/countries.css"
+import {Country, CountriesProps} from "../../interfaces/AppInterfaces/country"
 
 import database from "../../json/country.json"
 

@@ -1,10 +1,10 @@
 import React, {useState} from "react";
 import "../styles/app.css"
 import Countries from "../components/AppComponent/countries"
-import Leagues from "../components/leagues"
-import Teams from "../components/teams"
-import Players from "../components/players"
-import TeamStatics from "../components/statics"
+import Leagues from "../components/AppComponent/leagues"
+import Teams from "../components/AppComponent/teams"
+import Players from "../components/AppComponent/players"
+import TeamStatics from "../components/AppComponent/statics"
 
 const MeuTime: React.FC = () =>{
 
@@ -26,7 +26,10 @@ const MeuTime: React.FC = () =>{
 
     return(
         <div className="containerMain">
+            
             <header className="selectionMenu">
+
+                <h2>Meu Time</h2>
 
                 <div className="selection countrie">
                     <Countries onSelect={countrySelectedEvent}/>

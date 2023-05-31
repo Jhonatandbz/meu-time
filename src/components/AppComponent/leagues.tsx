@@ -1,9 +1,9 @@
 import React, {useEffect, useState} from "react";
-import {makeGetRequest} from "../adapters/get"
-import "../styles/leagues.css"
-import {LeagueResponse, LeagueItem, LeaguesProps} from "../interfaces/league"
+import {makeGetRequest} from "../../adapters/get"
+import "../../styles/leagues.css"
+import {LeagueResponse, LeagueItem, LeaguesProps} from "../../interfaces/AppInterfaces/league"
 
-import database from "../json/leagues.json"
+import database from "../../json/leagues.json"
 
 const LeagueList: React.FC<LeaguesProps> = ({country, onSelect}) => {
 
