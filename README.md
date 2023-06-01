@@ -14,6 +14,7 @@ Passo 2: Instalar as dependências
 Navegue até o diretório do projeto usando o comando cd: cd meu-projeto
 
 Em seguida, instale as dependências do projeto executando o seguinte comando: npm install
+Após isso, se certifique que está intalado o google charts, ou instale utilizando: npm install --save react-google-charts
 
 Passo 3: Iniciar o servidor de desenvolvimento
 Para iniciar o servidor de desenvolvimento, utilize o seguinte comando: npm start

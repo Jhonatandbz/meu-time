@@ -1,9 +1,10 @@
 import React, {useEffect, useState} from "react";
-import {makeGetRequest} from "../../adapters/get"
-import "../../styles/statics.css"
-import { StaticProps, TeamStatisticsResponse, StatsTableProps } from "../../interfaces/AppInterfaces/static";
+import {makeGetRequest} from "../../../adapters/get"
+import "../../../styles/statics.css"
+import { StaticProps, TeamStatisticsResponse, StatsTableProps } from "../../../interfaces/AppInterfaces/static";
+import Graphic from "./goalsGrafic"
 
-import database from "../../json/statistics.json"
+import database from "../../../json/statistics.json"
 
 const TeamStatics: React.FC<StaticProps> = ({league, team}) =>{
 
@@ -28,6 +29,7 @@ const TeamStatics: React.FC<StaticProps> = ({league, team}) =>{
     }, [team])
 
     const {played, wins, draws, loses} = database.response.fixtures
+
     // if(!data?.response.lineups){
     //     return <h1></h1>
     // }
@@ -76,6 +78,8 @@ const TeamStatics: React.FC<StaticProps> = ({league, team}) =>{
                     </tr>
                 </tbody>
             </table>
+
+            <Graphic/>
         </div>
         </>
     )

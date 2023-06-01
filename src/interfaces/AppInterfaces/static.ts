@@ -168,3 +168,7 @@ export interface StaticProps{
     league: string;
     team: string;
 }
+
+export interface GoalsGraphicProps{
+  data: TeamStatisticsResponse
+}

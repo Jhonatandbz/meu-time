@@ -4,7 +4,7 @@ import Countries from "../components/AppComponent/countries"
 import Leagues from "../components/AppComponent/leagues"
 import Teams from "../components/AppComponent/teams"
 import Players from "../components/AppComponent/players"
-import TeamStatics from "../components/AppComponent/statics"
+import TeamStatics from "../components/AppComponent/statics/statics"
 
 const MeuTime: React.FC = () =>{
 
@@ -26,7 +26,7 @@ const MeuTime: React.FC = () =>{
 
     return(
         <div className="containerMain">
-            
+
             <header className="selectionMenu">
 
                 <h2>Meu Time</h2>
