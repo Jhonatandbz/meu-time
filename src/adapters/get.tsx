@@ -1,14 +1,16 @@
-import {API_KEY, API_URL} from "./apiConfig"
+import {getApiKey, API_URL} from "./apiConfig"
 import {Props} from "../interfaces/AppInterfaces/get"
 
 export const makeGetRequest = async (props: Props) => {
 
   const {endpoint} = props;
   var apiUrl = API_URL + `${endpoint}`;
-  const apiKey = API_KEY;
+  const apiKey = getApiKey();
   const headers = new Headers();
   headers.append('x-rapidapi-key', apiKey);
   headers.append('x-rapidapi-host', 'v3.football.api-sports.io');
+
+  
 
   try {
     const response = await fetch(apiUrl, {

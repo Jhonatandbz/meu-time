@@ -11,11 +11,12 @@ const LeagueList: React.FC<LeaguesProps> = ({country, onSelect}) => {
     const [league, setLeague] = useState<LeagueItem | null>(null);
     
     useEffect(()=>{
+
         
         const fetchData = async () =>{
 
             const endpoint = `leagues?country=${encodeURIComponent(country)}`
-            
+                
             try{
                 const response = await makeGetRequest({endpoint: endpoint});
                 setData(response);
@@ -24,7 +25,9 @@ const LeagueList: React.FC<LeaguesProps> = ({country, onSelect}) => {
             }
         }
 
-        fetchData();
+        if(country){
+            fetchData();
+        }
 
     },[country])
 

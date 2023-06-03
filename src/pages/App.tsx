@@ -29,7 +29,7 @@ const MeuTime: React.FC = () =>{
 
             <header className="selectionMenu">
 
-                <h2>Meu Time</h2>
+                <h2><em>Meu Time</em></h2>
 
                 <div className="selection countrie">
                     <Countries onSelect={countrySelectedEvent}/>
@@ -50,7 +50,7 @@ const MeuTime: React.FC = () =>{
                 <TeamStatics league={selectedLeague} team={selectedTeam}/>
 
                 <div className="selection players">
-                        <h3>Jogadores</h3>
+                        <h3><em>Jogadores</em></h3>
                         <Players league={selectedLeague} team={selectedTeam}/>
                 </div>
             </div>

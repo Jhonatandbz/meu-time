@@ -1,23 +1,38 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@500&display=swap');
 
-.selectionMenu{
-    display: flex;
-    align-items: center;
-    gap: 1em;
-}
-
-.selectionMenu h2{
-    margin-right: auto;
-    padding: 0 20px;
+:root{
+    --paddinBorder: 0.5em;
 }
 
 .containerMain{
     display: flex;
     flex-direction: column;
-    gap: 2em;
-    margin-right: 0.5em;
-    max-height: 100vh;
-    
+    gap: 1em;
+    height: 99vh;
+    background-color: #fff;
+
+}
+
+.selectionMenu{
+    display: flex;
+    align-items: center;
+    border: #000 1px solid;
+    gap: 1em;
+    background-color: #eaff00;
+    background-image: linear-gradient(232deg, #eaff00 17%, #169c38 49%, #0905e3 100%);
+
+
+}
+
+.selectionMenu h2{
+    margin-right: auto;
+    margin-left: var(--paddinBorder);
+    padding: 0 20px;
+    font-family: 'Roboto Slab', serif;
+    letter-spacing: 3px;
+    border: #000 1px solid;
+    border-radius: 0px 50px;
+    background-color: #fff;
 }
 
 select{
@@ -25,9 +40,9 @@ select{
     -moz-appearance: none;
     appearance: none;
     padding: 5px 12px;
-    background-color: #222;
+    background-color: #fff;
     font-family: sans-serif;
-    color: #fff;
+    color: #000;
     font-size: 0.9em;
     font-weight: bold;
     box-shadow: 0px 10px 4px rgba(0, 0, 0, 0.2);
@@ -39,11 +54,16 @@ select{
     display: flex;
     height: fit-content;
     margin-left: 1em ;
+    padding-right: var(--paddinBorder);
 }
 
 .selection.players{
     justify-items: flex-end;
     margin-left: auto;
+}
+
+.selection.teams{
+    padding-right: var(--paddinBorder);
 }
 
 .selection.players > * {
@@ -54,9 +74,14 @@ select{
 
 .players h3{
     text-align: center;
-    line-height: 40px;
-    background-color: bisque;
+    line-height: 44px;
     height: 2em;
     border-radius: 20px 20px 0px 0px; 
+    letter-spacing: 2px;
+    font-size: 1.5em;
     font-family: 'Roboto Slab', serif;
+    color: #fff;
+    background-color: #F4D03F;
+    background-image: linear-gradient(132deg, #F4D03F 0%, #16A085 100%);
+    ;
 }

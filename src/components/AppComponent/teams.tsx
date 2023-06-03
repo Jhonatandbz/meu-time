@@ -24,8 +24,10 @@ const TeamList: React.FC<TeamProps> = ({league, onSelect}) => {
             }
         }
 
-        fetchData();
-
+        if(league){
+            fetchData();
+        }
+        
     }, [league])
 
     const teamSelected = (event: React.ChangeEvent<HTMLSelectElement>) => {
