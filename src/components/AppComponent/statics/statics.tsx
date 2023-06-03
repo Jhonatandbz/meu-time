@@ -34,6 +34,10 @@ const TeamStatics: React.FC<StaticProps> = ({league, team}) =>{
         return <h1></h1>
     }
 
+    if(data?.response.lineups[0].formation == ''){
+        return <h1>Sem dados na API</h1>
+    }
+
     const {played, wins, draws, loses} = data.response.fixtures
 
     return(

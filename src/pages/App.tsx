@@ -1,13 +1,16 @@
-import React, {useState} from "react";
+import React, {useEffect, useState} from "react";
+import { useNavigate } from "react-router-dom";
 import "../styles/app.css"
 import Countries from "../components/AppComponent/countries"
 import Leagues from "../components/AppComponent/leagues"
 import Teams from "../components/AppComponent/teams"
 import Players from "../components/AppComponent/players"
 import TeamStatics from "../components/AppComponent/statics/statics"
+import { getApiKey } from "../adapters/apiConfig"
 
 const MeuTime: React.FC = () =>{
 
+    const navigate = useNavigate();
     const [selectedCountry, setSelectedCountry] = useState("")
     const [selectedLeague, setSelectedLeague] = useState("")
     const [selectedTeam, setSelectedTeam] = useState("")
@@ -23,6 +26,21 @@ const MeuTime: React.FC = () =>{
     const teamSelectedEvent = (team: string) => {
         setSelectedTeam(team)
     }
+
+    const backToLogin = () => {
+        navigate('/');
+        
+    }
+
+    useEffect(()=>{
+        if(getApiKey() == ''){
+            backToLogin();
+        }
+    }, [])
+
+    
+
+    
 
     return(
         <div className="containerMain">
