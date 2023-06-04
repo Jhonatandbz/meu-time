@@ -9,9 +9,6 @@ const GoalGraphic: React.FC<GoalsGraphicProps> = ({data}) => {
 
     let minutesFor = Object.entries(data.response["goals"]["for"]["minute"])
     let minutesAgainst = Object.entries(data.response["goals"]["against"]["minute"])
-
-
-    console.log(minutesFor)
     
     let arrayFull: Array<Array<string | number>> = [['TEMPO (minutos)', 'Gols feitos', 'Gols sofridos']]
 
@@ -88,6 +85,5 @@ const GoalGraphic: React.FC<GoalsGraphicProps> = ({data}) => {
         />
       );
 }
-
 
 export default GoalGraphic;

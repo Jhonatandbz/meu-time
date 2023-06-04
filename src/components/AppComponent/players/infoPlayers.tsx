@@ -4,23 +4,26 @@ import "../../../styles/infoPlayers.css"
 
 import database from "../../../json/players.json"
 
-const InfoPlayer: React.FC<PlayerInfoProps> = ({data, id}) =>{
+const InfoPlayer: React.FC<PlayerInfoProps> = ({data, index}) =>{
 
     const [imageUrl, setImageUrl] = useState('');
     const [selectedPlayer, setSelectedPlayer] = useState<PlayerItem>()
     
-
     useEffect(() => {
 
-        const selectedPlayer = data?.response.find((item) => item.player.id === id);
-        setSelectedPlayer(selectedPlayer)
-        const imageUrl = selectedPlayer?.player.photo || '';
+        console.log(data.response[index])
+        const selected = data?.response[index]
+        setSelectedPlayer(selected)
+        const imageUrl = selected?.player.photo || '';
 
         setImageUrl(imageUrl);
-    }, [id]);
+    }, [index]);
 
     if(!selectedPlayer){
-        return <span className="cardPlayer"></span>
+        console.log("selectedPlayer vazio")
+        return (<span className="cardPlayer">
+                <h2><em>Selecione um Jogador!</em></h2>
+                </span>)
     }
 
     const {name, age, nationality, birth} = selectedPlayer.player
@@ -28,11 +31,12 @@ const InfoPlayer: React.FC<PlayerInfoProps> = ({data, id}) =>{
     const date = new Date(birth.date);
     const formattedDate = `${date.getDate()}/${date.getMonth() + 1}/${date.getFullYear()}`;
 
+    console.log("jogador foi selecionado", name)
 
     return (
         <div className="cardPlayer">
 
-            {imageUrl && <img src={imageUrl} alt="Imagem do jogador" className="playerImage"/>}
+            <img src={imageUrl} alt="Imagem do jogador" className="playerImage"/>
 
             <div className="cardInfo">
                 <h5>Nome: {name}</h5>

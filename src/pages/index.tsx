@@ -28,13 +28,13 @@ const Login = () => {
         
         if(!data?.response || Object.keys(data.response).length === 0){
             inputKey.current?.classList.add('invalid')
-            setAlertKey('Chave inválida. Insira uma chave válida')
+            setAlertKey('Chave inválida. Insira uma chave válida.')
         }else{
             if(data?.response.subscription.active){
                 goToMainPage()
             }else{
                 inputKey.current?.classList.add('invalid')
-                setAlertKey('Chave inativa. Verifique sua assinatura ou insira uma chave válida')
+                setAlertKey('Chave inativa. Verifique sua assinatura ou insira uma chave válida.')
             }
         }
 

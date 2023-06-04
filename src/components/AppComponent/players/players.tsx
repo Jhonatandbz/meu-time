@@ -32,8 +32,8 @@ const PlayerList: React.FC<PlayersProps> = ({league, team}) => {
 
     }, [team, league])
 
-    const dataPlayer = (id: number) =>{
-        setPlayer(id);
+    const dataPlayer = (index: number) =>{
+        setPlayer(index);
     }
 
     if(!data?.response){
@@ -43,16 +43,16 @@ const PlayerList: React.FC<PlayersProps> = ({league, team}) => {
     return(
         <div className="containerPlayer">
 
-            <InfoPlayers data={data} id={player}/>
+            <InfoPlayers data={data} index={player}/>
 
             <div className="list">
                 <h3><em>Jogadores</em></h3>
                 <ul className="playersUl">
                     
                     <span className="listPlayer"></span>
-                    {data?.response.map(({player}, index) => (
+                    {database?.response.map(({player}, index) => (
                         <li key={player.id} className="playersListItem">
-                        <h4 onClick={() => dataPlayer(player.id)}>{player.firstname} {player.lastname}</h4>
+                        <h4 onClick={() => dataPlayer(index)}>{player.firstname} {player.lastname}</h4>
                         <p><em>Idade: {player.age}</em></p>
                         <p><em>Nacionalidade: {player.nationality}</em> </p>
                         <span className="liItem"></span>

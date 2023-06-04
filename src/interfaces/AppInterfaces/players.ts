@@ -115,11 +115,6 @@ export interface PlayersProps{
 
 export interface PlayerInfoProps{
   data: PlayerResponse;
-  id: number;
-  // image: string;
-  // name: string;
-  // age: number;
-  // birth: string;
-  // nationality: string;
+  index: number;
 }
 

@@ -32,11 +32,11 @@ const TeamStatics: React.FC<StaticProps> = ({league, team}) =>{
     }, [team])
 
     useEffect(() => {
-        if (database) {
-          if (database.response.lineups[0].formation.length <= 0) {
+        if (data) {
+          if (data.response.lineups[0].formation.length <= 0) {
             setIsFormation('Sem dados de formação');
           } else {
-            setIsFormation(database.response.lineups[0].formation);
+            setIsFormation(data.response.lineups[0].formation);
           }
         }
     }, [data]);
@@ -46,7 +46,7 @@ const TeamStatics: React.FC<StaticProps> = ({league, team}) =>{
         return <h1></h1>
     }
 
-    const {played, wins, draws, loses} = database.response.fixtures
+    const {played, wins, draws, loses} = data.response.fixtures
 
     return(
         <>
@@ -97,8 +97,6 @@ const TeamStatics: React.FC<StaticProps> = ({league, team}) =>{
 
             <Graphic data={data}/>
         </div>
-
-        
 
         </>
     )
