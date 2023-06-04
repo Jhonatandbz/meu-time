@@ -8,7 +8,7 @@ Antes de começar, certifique-se de ter as seguintes ferramentas instaladas em s
 - Node.js
 
 Passo 1: Clonar o repositório
-Clone o repositório do projeto para o seu ambiente local. Abra o terminal e execute o seguinte comando: git clone https://github.com/seu-usuario/meu-projeto.git
+Clone o repositório do projeto para o seu ambiente local. Abra o terminal e execute o seguinte comando: git clone https://github.com/Jhonatandbz/meu-time.git
 
 Passo 2: Instalar as dependências
 Navegue até o diretório do projeto usando o comando cd: cd meu-projeto
