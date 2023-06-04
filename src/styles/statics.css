@@ -35,12 +35,6 @@
     font-family: 'Roboto Slab', serif;
 }
 
-.formationTable table, th, td{
-    border-bottom : 1px #000 solid;
-    height: 1.5em;
-}
-
-
 .formationTable .staticsTable{
     border-collapse: collapse;
     font-family: 'Roboto Slab', serif;
@@ -49,15 +43,35 @@
 }
 
 .staticsTable tr:nth-child(even) {
-    background-color: #777;
+    background-color: #fff;
 }
 
 
 .staticsTable td:first-child {
     max-width: 100px; 
+    border-left: 1px #000 solid;
+    padding-left: 10px;
+    font-family: 'Roboto Slab', serif;
+    font-style: italic;
 }
 
 .staticsTable td:not(:first-child){
     max-width: 70px;
     text-align: center;
+    border: 1px #000 solid;
+    font-weight: bold;
 }
+
+.formationTable > table, th, td{
+    border-bottom : 1px #000 solid;
+    height: 1.5em;
+}
+
+.staticsTable > thead > tr > th{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-style: italic;
+    font-size: 17px;
+}
+
+
+

@@ -37,7 +37,7 @@ const TeamList: React.FC<TeamProps> = ({league, onSelect}) => {
 
     return(
         <>
-        <select key="teamsList" onChange={teamSelected} className="list teamsList">
+        <select key={data?.response[0].team.name} onChange={teamSelected} className="list teamsList">
             <option value='' disabled selected>Times</option>
             {data?.response.map(({team}) => (
                 <option key={team.id} value={team.id}>

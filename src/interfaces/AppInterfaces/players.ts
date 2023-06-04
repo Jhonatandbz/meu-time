@@ -109,7 +109,17 @@ export interface PlayerItem {
 }
 
 export interface PlayersProps{
-    league: string
-    team: string
+    league: string;
+    team: string;
+}
+
+export interface PlayerInfoProps{
+  data: PlayerResponse;
+  id: number;
+  // image: string;
+  // name: string;
+  // age: number;
+  // birth: string;
+  // nationality: string;
 }
 

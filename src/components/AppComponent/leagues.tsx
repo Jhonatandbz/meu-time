@@ -52,7 +52,7 @@ const LeagueList: React.FC<LeaguesProps> = ({country, onSelect}) => {
     return (
         <>
         <div className="leagueTemp">
-            <select key="leaguesList" onChange={leagueSelected} className=" list leaguesList">
+            <select key={data?.response[0].league.name} onChange={leagueSelected} className=" list leaguesList">
                 <option value='' disabled selected>Ligas</option>
                 {data?.response.map(({league}) => (
                     <option key={league.id} value={league.id}>
@@ -62,7 +62,7 @@ const LeagueList: React.FC<LeaguesProps> = ({country, onSelect}) => {
             </select>
 
             
-            <select key="seasonList" onChange={seasonSelected} className="list seasonList">
+            <select key={league?.league.id} onChange={seasonSelected} className="list seasonList">
                 <option value='' disabled selected>Temporada</option>
                 {league?.seasons.map((item, index) => (
                     <option key={index} value={item.year}>

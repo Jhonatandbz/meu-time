@@ -1,14 +1,15 @@
 import React, {useEffect, useState} from "react";
 import {makeGetRequest} from "../../../adapters/get"
 import "../../../styles/statics.css"
-import { StaticProps, TeamStatisticsResponse, StatsTableProps } from "../../../interfaces/AppInterfaces/static";
+import { StaticProps, TeamStatisticsResponse } from "../../../interfaces/AppInterfaces/static";
 import Graphic from "./goalsGrafic"
 
 import database from "../../../json/statistics.json"
 
 const TeamStatics: React.FC<StaticProps> = ({league, team}) =>{
 
-    const [data, setData] = useState<TeamStatisticsResponse | null>(null)
+    const [isFormation, setIsFormation] = useState<String>('null');
+    const [data, setData] = useState<TeamStatisticsResponse | null>(null);
 
     useEffect (()=>{ 
 
@@ -30,15 +31,22 @@ const TeamStatics: React.FC<StaticProps> = ({league, team}) =>{
         
     }, [team])
 
-    if(!data?.response.lineups){
+    useEffect(() => {
+        if (database) {
+          if (database.response.lineups[0].formation.length <= 0) {
+            setIsFormation('Sem dados de formação');
+          } else {
+            setIsFormation(database.response.lineups[0].formation);
+          }
+        }
+    }, [data]);
+
+
+    if(!data?.response){
         return <h1></h1>
     }
 
-    if(data?.response.lineups[0].formation == ''){
-        return <h1>Sem dados na API</h1>
-    }
-
-    const {played, wins, draws, loses} = data.response.fixtures
+    const {played, wins, draws, loses} = database.response.fixtures
 
     return(
         <>
@@ -46,7 +54,7 @@ const TeamStatics: React.FC<StaticProps> = ({league, team}) =>{
             <div className="formationTable">
                 <span className="formation">
                     <h3><em>Formação mais utilizada:</em> </h3>   
-                    <h2>{data?.response.lineups[0].formation}</h2> 
+                    <h2>{isFormation}</h2> 
                 </span>
 
                 <table className="staticsTable">

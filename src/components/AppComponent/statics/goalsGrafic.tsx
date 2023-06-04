@@ -7,8 +7,6 @@ import database from "../../../json/statistics.json"
 
 const GoalGraphic: React.FC<GoalsGraphicProps> = ({data}) => {
 
-    
-
     let minutesFor = Object.entries(data.response["goals"]["for"]["minute"])
     let minutesAgainst = Object.entries(data.response["goals"]["against"]["minute"])
 

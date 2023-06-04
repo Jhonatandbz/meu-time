@@ -1,0 +1,31 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@500&display=swap');
+
+.cardPlayer{
+    display: flex;
+    gap: 20px;
+    width: 35vw;
+    height: 26vh;
+    margin-top: 10px;
+    border: 4px #000;
+    border-style: ridge;
+    border-radius: 0px 50px 0px 50px;
+}
+
+.cardPlayer > .playerImage{
+    margin-top: 10px;
+    margin-left: 10px;
+    width: 150px;
+    height: 150px;
+}
+
+.cardPlayer > .cardInfo{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.cardInfo > h5{
+    font-family: 'Roboto Slab', serif;
+    font-size: 20px;
+}

@@ -25,7 +25,6 @@ const CountryList: React.FC<CountriesProps> = ({onSelect}) => {
 
     },[])
 
-
     const countrySelected = (event: React.ChangeEvent<HTMLSelectElement>) => {
         onSelect(event.target.value)
     }

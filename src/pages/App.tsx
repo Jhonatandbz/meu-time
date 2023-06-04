@@ -4,8 +4,9 @@ import "../styles/app.css"
 import Countries from "../components/AppComponent/countries"
 import Leagues from "../components/AppComponent/leagues"
 import Teams from "../components/AppComponent/teams"
-import Players from "../components/AppComponent/players"
+import Players from "../components/AppComponent/players/players"
 import TeamStatics from "../components/AppComponent/statics/statics"
+
 import { getApiKey } from "../adapters/apiConfig"
 
 const MeuTime: React.FC = () =>{
@@ -68,13 +69,11 @@ const MeuTime: React.FC = () =>{
                 <TeamStatics league={selectedLeague} team={selectedTeam}/>
 
                 <div className="selection players">
-                        <h3><em>Jogadores</em></h3>
+                        
                         <Players league={selectedLeague} team={selectedTeam}/>
                 </div>
             </div>
 
-
-            
         </div>
     )
 
