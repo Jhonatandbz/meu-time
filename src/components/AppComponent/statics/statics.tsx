@@ -32,13 +32,19 @@ const TeamStatics: React.FC<StaticProps> = ({league, team}) =>{
     }, [team])
 
     useEffect(() => {
+
+        console.log(data?.response.lineups)
+
         if (data) {
-          if (data.response.lineups[0].formation.length <= 0) {
-            setIsFormation('Sem dados de formação');
+          if (data.response.lineups.length <= 0) {
+            setIsFormation('');
           } else {
             setIsFormation(data.response.lineups[0].formation);
           }
         }
+
+
+
     }, [data]);
 
 
