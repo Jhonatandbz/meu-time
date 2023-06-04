@@ -19,13 +19,13 @@ npm install
 ```
 Após isso, se certifique que está intalado o google charts, ou instale utilizando: 
 ```
-- npm install --save react-google-charts
+npm install --save react-google-charts
 ```
 ```
-- npm install react-router-dom
+npm install react-router-dom
 ```
 ```
-- npm install @types/react-router-dom
+npm install @types/react-router-dom
 ```
 
 Passo 3: Iniciar o servidor de desenvolvimento
