@@ -1,3 +1,5 @@
+Para testes utilize a chave: d4c4a53abe5002a0227a38cd3c41b579
+
 Desafio: Desenvolver a aplicação "Meu Time" que utiliza a API-Football para obter informações sobre ligas e copas de futebol. Os usuários acessam a aplicação com uma chave de autenticação da API-Football.
 
 Executando o projeto React TypeScript
